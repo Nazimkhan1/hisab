@@ -173,6 +173,14 @@ If the site URL or domain ever changes, add the new origin in the Google OAuth c
 
 ---
 
+## 6A. Ads (AdSense) rules
+- Publisher ID: `ca-pub-4135041725422483`. The site tag is on every page; ad units are placed only after AdSense approval.
+- **No ads on the entry page (the "Nayi entry" form).** The user's rule (13 Nov 2026).
+- Ads only on: the Roz ka hisab, Len-den and Statement lists (at the bottom), and the guide pages.
+- **Keep Auto ads OFF in AdSense**, because auto ads can appear anywhere, including on the entry form. Use manual ad units only.
+- Never near buttons (Entry jodo, login, mic), no pop-ups or full-screen ads.
+- `ads.txt` must be at `https://nextgrade.in/ads.txt` (the ERP server, managed by the user, never by us): `google.com, pub-4135041725422483, DIRECT, f08c47fec0942fa0`
+
 ## 7. Security and privacy (in short)
 
 - No server and no database. The app maker has no admin panel, no user list and no access to anyone's data.
