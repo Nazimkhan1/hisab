@@ -3,12 +3,11 @@
 A daily expense, income and len-den (lend/borrow) app. It is a free **PWA** (web app that installs like a phone app), hosted on **GitHub Pages**. Each user's data stays on their own phone, or in **their own Google Drive** if they sign in. There is no server and no database.
 
 - Live app: **https://hisab.nextgrade.in/** (moved 13 Nov 2026; the old https://nazimkhan1.github.io/hisab-kitab/ now shows a moving page that carries each phone's data to the new address)
-- Share link: https://tinyurl.com/hisab-kitab (opens the app directly, no ad page)
+- Share link: **https://hisab.nextgrade.in** (share this one)
 - Code: https://github.com/nazimkhan1/hisab (new repo, served at hisab.nextgrade.in through the `CNAME` file). The old repo `hisab-kitab` only holds the moving page (source in `~/www/hisab-kitab-old-repo/`).
 - Domain: `nextgrade.in` (GoDaddy, DNS on Cloudflare). `hisab` CNAME → `nazimkhan1.github.io`, DNS only.
 - Pick a language with a link: add `?lang=hinglish`, `?lang=en`, `?lang=hi`, `?lang=bn` or `?lang=ur`
 
-> Old bit.ly links (bit.ly/hisab-kitab-app, bit.ly/4jaivAy) still work, but the free Bitly plan shows an ad page first. Share the TinyURL link instead.
 
 ---
 
@@ -84,8 +83,8 @@ A folder named **"Hisab Kitab"** in the user's **My Drive** holds:
   - After "Baad mein" it stays hidden for 3 days. It never shows once the app is installed.
 - A loading screen (₹ logo + spinner) shows while the app opens.
 
-### Short link
-- **TinyURL** at https://tinyurl.com/hisab-kitab, made without an account, so it can't be edited. It is a direct 301 redirect.
+### Links
+- Share **https://hisab.nextgrade.in**. We don't use Bitly. The old https://tinyurl.com/hisab-kitab still works: it goes to the old github.io address, which forwards to the new one.
 
 ---
 
