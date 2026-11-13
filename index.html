@@ -382,6 +382,7 @@ table.stmt .cr { color: var(--jama); }
           <div class="menu-sep"></div>
           <a role="menuitem" href="terms.html">Terms</a>
           <a role="menuitem" href="privacy.html">Privacy policy</a>
+          <a role="menuitem" href="guide/" data-i18n="menu.guide">Guide &amp; tips</a>
           <button type="button" role="menuitem" id="menuLogout" class="danger" data-i18n="acc.logout" hidden>Logout</button>
         </div>
       </div>
@@ -908,6 +909,8 @@ table.stmt .cr { color: var(--jama); }
       "n.moveErr": "پرانا حساب خود سے نہیں آ سکا۔ پرانے لنک پر “بیک اپ فائل لو” دبائیے، پھر یہاں ⋮ مینو سے “بیک اپ سے واپس لاؤ” کیجیے۔" },
   };
   for (const [l, o] of Object.entries(MOVE_STR)) Object.assign(STR[l], o);
+  const GUIDE_STR = { hinglish: { "menu.guide": "Guide aur tips" }, en: { "menu.guide": "Guide & tips" }, hi: { "menu.guide": "गाइड और टिप्स" }, bn: { "menu.guide": "গাইড ও টিপস" }, ur: { "menu.guide": "گائیڈ اور ٹپس" } };
+  for (const [l, o] of Object.entries(GUIDE_STR)) Object.assign(STR[l], o);
   let LANG = pickLang();
   function tr(key, vars) {
     let s = (STR[LANG] && STR[LANG][key]) || STR.hinglish[key] || key;

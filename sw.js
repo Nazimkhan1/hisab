@@ -1,6 +1,6 @@
 // Hisab Kitab service worker: lets the app open offline and be installed.
 // Bump VERSION whenever index.html changes so phones pick up the new copy.
-const VERSION = "hk-v18";
+const VERSION = "hk-v19";
 const SHELL = [
   "./",
   "./index.html",
@@ -33,14 +33,19 @@ self.addEventListener("fetch", (event) => {
 
   // The page itself: try the network first so updates show up, fall back to the saved copy offline.
   if (req.mode === "navigate") {
+    // Only the app page itself is kept as the offline copy; other pages (guide, privacy, terms) are not.
+    const scope = new URL(self.registration.scope);
+    const isApp = url.pathname === scope.pathname || url.pathname === scope.pathname + "index.html";
     event.respondWith(
       fetch(req)
         .then((res) => {
-          const copy = res.clone();
-          caches.open(VERSION).then((c) => c.put("./index.html", copy));
+          if (isApp && res.ok) {
+            const copy = res.clone();
+            caches.open(VERSION).then((c) => c.put("./index.html", copy));
+          }
           return res;
         })
-        .catch(() => caches.match("./index.html"))
+        .catch(() => (isApp ? caches.match("./index.html") : caches.match(req).then((hit) => hit || caches.match("./index.html"))))
     );
     return;
   }
